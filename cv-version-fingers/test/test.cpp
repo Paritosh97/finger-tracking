@@ -106,9 +106,11 @@ void CallbackFunc(int event, int x, int y, int flags, void* userdata)
   std::cout << pixel << std::endl;
 }
 
-int main()
+int main(int argc, char* argv[])
 {
   cv::VideoCapture cap(0);
+  cap.set(3, 640);
+  cap.set(4, 480);
   const char* windowName = "Fingertip detection";
   cv::namedWindow(windowName);
   cv::setMouseCallback(windowName, CallbackFunc, NULL);
